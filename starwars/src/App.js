@@ -20,7 +20,7 @@ const App = () => {
       .get(proxy+url)
       .then((response) => {
           console.log(response.data.results);
-          setCharacters(response.data.results);
+          setCharacters(response.data.results);;
       })
       .catch((error => {
          console.log("the data was not return", error);
@@ -33,15 +33,13 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-    {
-      characters.map(character => {
-        console.log(character);
-        // return(<Character character={character} />)
-      })
-
-    }
-      </div>
-  );
-}
+      {
+        characters.map(character => {
+          return(<Character character={character}/>)
+        })
+      }
+  		</div>
+  	);
+  };
 
 export default App;
